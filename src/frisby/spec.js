@@ -421,6 +421,7 @@ class FrisbySpec {
         // Re-throw error if pass is expected; else bury it
         if (expectPass === true) {
           this._inspectOnFailure();
+          throw new Error(`${e}\n---\n${response._body}\n---`);
           throw e;
         }
       }
